@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
         higherStates <- filter(dataPlot, Number.Collisions > usMean)
         
         # draw the histogram with the specified number of bins
-        ggplot(higherStates) + geom_point(aes_string(x = "State", y = input$higherY, color = input$higherColorType)) + ggtitle("Analysis of States Data Higher than US Mean")
+        ggplot(higherStates) + geom_point(aes_string(x = "State", y = input$higherY, color = input$higherColorType)) + ggtitle("Analysis of States Data Higher than US Mean") + theme(axis.text.x=element_text(angle=90,hjust=1))
       })
       
       output$lowerAverage <- renderPlot({
@@ -34,7 +34,7 @@ shinyServer(function(input, output) {
         lowerStates <- filter(dataPlot, Number.Collisions < usMean)
         
         # draw the histogram with the specified number of bins
-        ggplot(lowerStates) + geom_point(aes_string(x = "State", y = input$lowerY, color = input$lowerColorType)) + ggtitle("Analysis of States Data Lower than US Mean")
+        ggplot(lowerStates) + geom_point(aes_string(x = "State", y = input$lowerY, color = input$lowerColorType)) + ggtitle("Analysis of States Data Lower than US Mean") + theme(axis.text.x=element_text(angle=90,hjust=1))
       })
   # Alcohol Comparision Tab
       
