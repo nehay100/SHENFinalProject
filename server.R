@@ -52,7 +52,7 @@ shinyServer(function(input, output) {
   # Car Insurance Tab
      output$Information <- renderPlot({
        
-       State_Names <- rep(c("Alabama", "California", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Kansas", "Louisiana", "Maine", "Ohio",   
+       State_Names <- rep(c("Alabama", "California", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Kansas", "Louisiana", "Maine", "Nebraska", "Ohio",   
                             "Pennsylvania", "Tennessee", "Utah", "Vermont", "Washington"), 2)
        Car_Insurance_and_Losses <- rep(c(Specific_States_melt$variable))
        Colors <- c(rep("Car Insurance Premiums", 1), rep("Losses incurred by insurance companies for collisions per insured driver", 1))
