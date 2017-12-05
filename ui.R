@@ -21,7 +21,7 @@ shinyUI(fluidPage(
                                                                  "Not involved in any previous accidents"), #Selection of options
                                                      selected = "Speeding")),
                             
-                            leafletOutput("mymap", width="100%", height="700"))), #Output of the map
+                            leafletOutput("mymap", width="1600", height="900"))), #Output of the map
                           
                  tabPanel("Car Insurance"),
                  tabPanel("Comparision", 
