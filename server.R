@@ -9,7 +9,7 @@ library(geojsonio)
 library(htmltools)
 
 source("code.R")
-
+source("EmanHardcode.R")
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   # Home Tab
@@ -50,7 +50,29 @@ shinyServer(function(input, output) {
      })
   
   # Car Insurance Tab
-  
+     output$Information <- renderPlot({
+       
+       State_Names <- rep(c("Alabama", "California", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Kansas", "Louisiana", "Maine", "Ohio",   
+                            "Pennsylvania", "Tennessee", "Utah", "Vermont", "Washington"), 2)
+       Car_Insurance_and_Losses <- rep(c(Specific_States_melt$variable))
+       Colors <- c(rep("Car Insurance Premiums", 1), rep("Losses incurred by insurance companies for collisions per insured driver", 1))
+       
+       Insurance_Losses_Data <- data.frame(  # create dataframe to select variable states, and costs for ggplot 
+         Variable <- factor(c(Car_Insurance_and_Losses)),
+         States <- factor(c(State_Names)),
+         costs <- c(Specific_States_melt$value)
+       )
+       data <- filter(Insurance_Losses_Data, States == input$State) # filters the specific state in the datatable 
+       
+       ggplot(data, aes(x = data$State, y = data$costs, fill = Colors)) +  # creates ggplot 
+         geom_bar(colour = "Black", stat = "identity",
+                  position=position_dodge(),
+                  size=.3) +    # Thinner lines
+         xlab("Name of State") + ylab("Premium and Losses costs") + # labels the x and y axis 
+         ggtitle("Car Insurance Premiums vs Losses incurred by insurance companies for collisions per insured driver") +  # Set title
+         theme_dark() # gives dark background 
+       
+     })
   # Comparision Tab
       dataPlot <- read.csv(file = 'data/bad-drivers.csv', stringsAsFactors = FALSE)
       
