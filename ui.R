@@ -11,7 +11,7 @@ shinyUI(fluidPage(
                            # font-size: 20px;}'),    
                  tabPanel("Home"),
                  tabPanel("Map"),
-                 tabPanel("Car Insurance Premiums"),
+                 tabPanel("Car Insurance"),
                  tabPanel("Comparision", 
                           # Application title
                           titlePanel("Comparision of Data with US Average"),
