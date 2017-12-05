@@ -1,5 +1,5 @@
 #HardCode 
-bad_drivers <- read.csv(file = "bad-drivers/bad-drivers.csv",  quote = '')
+bad_drivers <- read.csv(file = "data/bad-drivers.csv",  quote = '')
 
 # Selects State, Car Insurance Premiums, and Losses incurred by insurance companies for collisions per insured driver ($) from the CSV
 Insurance_Information <- select(bad_drivers, State, Car.Insurance.Premiums...., Losses.incurred.by.insurance.companies.for.collisions.per.insured.driver....)
@@ -22,5 +22,5 @@ Vermont <- Insurance_Information %>% filter(State == "Vermont")
 Washington <- Insurance_Information %>% filter(State == "Washington")
 
 Specific_States <- rbind(Alabama, California, Delaware, Florida, Georgia, Hawaii, Idaho, Kansas, Louisiana,
-                         Maine, Nebrasa, Ohio, Pennsylvania, Tennessee, Utah, Vermont, Washington)
+                         Maine, Nebraska, Ohio, Pennsylvania, Tennessee, Utah, Vermont, Washington)
 Specific_States_melt <-melt(Specific_States)

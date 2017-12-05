@@ -7,6 +7,7 @@ library(mapview)
 library(rsconnect)
 library(geojsonio)
 library(htmltools)
+library(reshape2)
 
 source("code.R")
 source("EmanHardcode.R")
