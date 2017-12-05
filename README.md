@@ -1,5 +1,7 @@
 # SHENFinalProject
 
+## Link to Shiny Project
+
 ## Summary
 A few weeks into the quarter, you will form teams to complete this challenge.  This is your final project, and each team can decide what they want to build.  More than anything, this project is an opportunity to stretch your skills by diving into a dataset that you find important/interesting.  As long as you meet the requirements below, the direction of your project can be quite flexible.
 
