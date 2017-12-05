@@ -68,3 +68,5 @@ full_data <- bad_drivers_data %>%
 
 state_data <- geojsonio::geojson_read("data/us_states.json", what = "sp")
 
+
+

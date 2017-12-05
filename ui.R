@@ -23,7 +23,19 @@ shinyUI(fluidPage(
                             
                             leafletOutput("mymap", width="1600", height="900"))), #Output of the map
                           
-                 tabPanel("Car Insurance"),
+                tabPanel("Car Insurance", 
+                          # Selects State, Car Insurance Premiums, and Losses incurred by insurance companies for collisions per insured driver ($) from the CSV
+                          
+                          # Pages Title
+                          titlePanel("Car Insurance Premium and Losses"),
+                          sidebarLayout(sidebarPanel(selectInput(inputId = "State", label = "States:", choices = c("Alabama", "California", "Delaware", "Florida","Georgia", "Hawaii", "Idaho",
+                                             "Utah", "Vermont", "Washington"),
+                                                                 selected = "Washington")
+                          ),
+                          # Displays the plot
+                          mainPanel(plotOutput("Information")
+                          )
+                          )),
                  tabPanel("Comparision", 
                           # Application title
                           titlePanel("Comparision of Data with US Average"),
