@@ -10,7 +10,19 @@ shinyUI(fluidPage(
                            #font-family: Arial;
                            # font-size: 20px;}'),    
                  tabPanel("Home"),
-                 tabPanel("Map"),
+                 tabPanel("Map",
+                          h2("Cumulative Map of the Bad Drivers Data"), #Title of the page
+                          sidebarLayout(
+                            sidebarPanel(selectInput(inputId = "states",
+                                                     label = "Percentage of drivers who were:",
+                                                     choices = c("Speeding",
+                                                                 "Not distracted",
+                                                                 "Alcohol impaired",
+                                                                 "Not involved in any previous accidents"), #Selection of options
+                                                     selected = "Speeding")),
+                            
+                            leafletOutput("mymap", width="100%", height="700"))), #Output of the map
+                          
                  tabPanel("Car Insurance"),
                  tabPanel("Comparision", 
                           # Application title

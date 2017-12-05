@@ -2,12 +2,52 @@
 library(dplyr)
 library(ggplot2)
 library(shiny)
+library(leaflet)
+library(mapview)
+library(rsconnect)
+library(geojsonio)
+library(htmltools)
+
+source("code.R")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   # Home Tab
   
   # Map Tab
+     output$mymap <- renderLeaflet({
+    
+    #You input a state and you get the percentage as an output for speeding, not distracted, alcohol impaired, and not involved in 
+    if(input$states == "Speeding") {
+      states = full_data$Percentage.Of.Drivers.Involved.In.Fatal.Collisions.Who.Were.Speeding
+    } else if(input$states == "Not distracted") {
+      states = full_data$Percentage.Of.Drivers.Involved.In.Fatal.Collisions.Who.Were.Not.Distracted
+    } else if(input$states == "Alcohol impaired") {
+      states = full_data$Percentage.Of.Drivers.Involved.In.Fatal.Collisions.Who.Were.Alcohol.Impaired
+    } else {
+      states = full_data$Percentage.Of.Drivers.Involved.In.Fatal.Collisions.Who.Had.Not.Been.Involved.In.Any.Previous.Accidents
+    }
+    
+    #For the display of the markers
+    string1 <- paste("State:", full_data$State) #String of the state name
+    string2 <- paste("The percentage is:", states, "%") #String of the percentage of the options for that specific state
+    popup <- paste(sep = "<br/>", string1, string2) #Line break of both strings
+    
+    leaflet(state_data) %>%
+      setView(-96, 37.8, 4) %>% #Lat and long coordinates for the map boundaries
+      addProviderTiles("MapBox", options = providerTileOptions(
+        id = "mapbox.light", #This creates an outline of every state in the United States
+        accessToken = Sys.getenv('pk.eyJ1IjoiaHdhaGVlZWQiLCJhIjoiY2phc21jYnY1NHNibjJxcGxseG9vMzl4cSJ9.xTnmU0DdOSrPePsTnlRdgg'))) %>%
+      addTiles() %>% #Adds the background of all continents, makes it look like an actual map rather than just the outline
+      addPolygons(weight = 2, 
+                  opacity = 1, 
+                  color = "black", #Outline adjustments
+                  dashArray = "1", 
+                  fillOpacity = 0.2)  %>%
+      addMarkers(data = full_data, lng = full_data$lng, lat = full_data$lat, popup=popup) %>% #The markers placed on the map
+      setView(lng = -95.85, lat = 39.75, zoom = 5) #The boundary that is first displayed when opened
+    
+     })
   
   # Car Insurance Tab
   
