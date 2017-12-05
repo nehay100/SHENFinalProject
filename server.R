@@ -46,7 +46,7 @@ shinyServer(function(input, output) {
                   dashArray = "1", 
                   fillOpacity = 0.2)  %>%
       addMarkers(data = full_data, lng = full_data$lng, lat = full_data$lat, popup=popup) %>% #The markers placed on the map
-      setView(lng = -95.85, lat = 39.75, zoom = 5) #The boundary that is first displayed when opened
+      setView(lng = -95.85, lat = 38.75, zoom = 5) #The boundary that is first displayed when opened
     
      })
   

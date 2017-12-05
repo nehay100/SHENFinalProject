@@ -14,14 +14,14 @@ shinyUI(fluidPage(
                           h2("Cumulative Map of the Bad Drivers Data"), #Title of the page
                           sidebarLayout(
                             sidebarPanel(selectInput(inputId = "states",
-                                                     label = "Percentage of drivers who were:",
+                                                     label = "Percentage of drivers involved in a car crash who were:",
                                                      choices = c("Speeding",
                                                                  "Not distracted",
                                                                  "Alcohol impaired",
                                                                  "Not involved in any previous accidents"), #Selection of options
                                                      selected = "Speeding")),
                             
-                            leafletOutput("mymap", width="1600", height="900"))), #Output of the map
+                            leafletOutput("mymap", width="1400", height="900"))), #Output of the map
                           
                 tabPanel("Car Insurance", 
                           # Selects State, Car Insurance Premiums, and Losses incurred by insurance companies for collisions per insured driver ($) from the CSV
