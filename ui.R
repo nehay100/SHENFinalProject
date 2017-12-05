@@ -11,7 +11,8 @@ shinyUI(fluidPage(
                            # font-size: 20px;}'),    
                  tabPanel("Home"),
                  tabPanel("Map",
-                          h2("Cumulative Map of the Bad Drivers Data"), #Title of the page
+                          h2("Cumulative Map of the Bad Drivers Data", align = "center"), #Title of the page
+                          p("Insert analysis paragraph here", align = "center"),
                           sidebarLayout(
                             sidebarPanel(selectInput(inputId = "states",
                                                      label = "Percentage of drivers involved in a car crash who were:",
@@ -19,8 +20,8 @@ shinyUI(fluidPage(
                                                                  "Not distracted",
                                                                  "Alcohol impaired",
                                                                  "Not involved in any previous accidents"), #Selection of options
-                                                     selected = "Speeding")),
-                            
+                                                     selected = "Speeding"), align = "center"),
+   
                             leafletOutput("mymap", width="1400", height="900"))), #Output of the map
                           
                 tabPanel("Car Insurance", 
