@@ -43,24 +43,24 @@ shinyUI(fluidPage(
                                                                 "Not distracted",
                                                                 "Alcohol impaired",
                                                                 "Not involved in any previous accidents"), #Selection of options
-                                                    selected = "Speeding"),
-                                        
-                                        p("For drivers involved in a car crash who were speeding, the percentages throughout the country have been
+                                                    selected = "Speeding")),
+                          
+                          h3("Analysis of the Map Data"),
+                          p("For drivers involved in a car crash who were speeding, the percentages throughout the country have been
                                           consistent. The majority of the states are in the 30th percentile, which is fairly low. The state with the
-                                          highest percentile is Hawaii being 54 percent, and the state with the lowest percentile is Nebraska being
-                                          13 percent."),
-                                        p("For drivers who were not distracted, the percentages were on the higher end of the spectrum. This could be 
-                                          interpreted as a good thing because those who were involved were fully conscious during the time of the accident. 
-                                          The states under this category are mostly in the 90th percentile. The state with the highest percentile is 
-                                          District of Columbia, being 100 percent. The state with the lowest percentile is Mississippi with 10 percent."),
-                                        p("For the drivers who were alcohol impaired, the percentages were about the same as those who were speeding.
-                                          The state with the highest percentile is Montana with 44 percent. The state with the lowest percentile is
-                                          Utah with 16 percent."),
-                                        p("For the drivers who had not previously been involved involved in previous collisions, the percentages are
-                                          about the same as the percentages for those who were not distracted. The state with the highest percentile is
-                                          District of Columbia and Mississippi with 100 percent. The state with the lowest percentile is Kentucky with
-                                          76 percent.")
-                                        )), #Analysis paragraphs
+                            highest percentile is Hawaii being 54 percent, and the state with the lowest percentile is Nebraska being
+                            13 percent."),
+                          p("For drivers who were not distracted, the percentages were on the higher end of the spectrum. This could be 
+                            interpreted as a good thing because those who were involved were fully conscious during the time of the accident. 
+                            The states under this category are mostly in the 90th percentile. The state with the highest percentile is 
+                            District of Columbia, being 100 percent. The state with the lowest percentile is Mississippi with 10 percent."),
+                          p("For the drivers who were alcohol impaired, the percentages were about the same as those who were speeding.
+                            The state with the highest percentile is Montana with 44 percent. The state with the lowest percentile is
+                            Utah with 16 percent."),
+                          p("For the drivers who had not previously been involved involved in previous collisions, the percentages are
+                            about the same as the percentages for those who were not distracted. The state with the highest percentile is
+                            District of Columbia and Mississippi with 100 percent. The state with the lowest percentile is Kentucky with
+                            76 percent.")), #Analysis paragraphs
                           
                 tabPanel("Car Insurance", 
                           # Selects State, Car Insurance Premiums, and Losses incurred by insurance companies for collisions per insured driver ($) from the CSV
