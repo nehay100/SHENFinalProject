@@ -27,7 +27,9 @@ shinyUI(fluidPage(
                           helpText("You can find the link", a("HERE!", href = "https://fivethirtyeight.com/features/which-state-has-the-worst-drivers/"))
                   ),
                  tabPanel("Map",
+
                           leafletOutput("mymap", width="1600", height="950"), #Output of the map
+
 
                           #The panel on the right side of the map
                           absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
