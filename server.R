@@ -30,7 +30,7 @@ shinyServer(function(input, output) {
     }
     
     #For the display of the markers
-    string1 <- paste("State:", full_data$State) #String of the state name
+    string1 <- paste(strong(span("State:", style = "color:#0083C4")), full_data$State) #String of the state name, "State:" is bold and colored to match the color of the marker
     string2 <- paste("The percentage is:", states, "%") #String of the percentage of the options for that specific state
     popup <- paste(sep = "<br/>", string1, string2) #Line break of both strings
     
@@ -46,7 +46,7 @@ shinyServer(function(input, output) {
                   dashArray = "1", 
                   fillOpacity = 0.2)  %>%
       addMarkers(data = full_data, lng = full_data$lng, lat = full_data$lat, popup=popup) %>% #The markers placed on the map
-      setView(lng = -95.85, lat = 39.75, zoom = 5) #The boundary that is first displayed when opened
+      setView(lng = -95.85, lat = 38.75, zoom = 5) #The boundary that is first displayed when opened
     
      })
   
