@@ -69,6 +69,13 @@ shinyUI(fluidPage(
                           
                           # Pages Title
                           titlePanel("Car Insurance Premium and Losses"),
+                         p("According to Insurance Research Council, 12.6 percent of drivers on American Roads are uninsured (2012)"),
+                         p("AVERAGE COMBINED INSURANCE PREMIUM (2011):"),
+                         p("The state with the highest average combined Insurance Premium was New Jersey ($1302)"),
+                         p("The state with the lowest average combined Insurance Premium was Idaho ($642) "),
+                         p("LOSSES INCURRED BY INSURANCE COMPANIES (2010): "),
+                         p("The state with the highest losses by insurance companies was Louisiana ($83) "),
+                         p("The state with the lowest losses by insurance companies was Idaho ($195)  "),
                           sidebarLayout(sidebarPanel(selectInput(inputId = "State", label = "States:", choices = c("Alabama", "California", "Delaware", "Florida","Georgia", "Hawaii", "Idaho",
                                              "Utah", "Vermont", "Washington"),
                                                                  selected = "Washington")
