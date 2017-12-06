@@ -24,10 +24,9 @@ shinyUI(fluidPage(
                           helpText("- cumulative percentage of people who were involved in collisions who were speeding, alcohol impaired, not distracted, for each state"), 
                           helpText("- a comparison about states lower and higher than the United States Average"), 
                           helpText("The data was collected by Mona Chalabi and was published on the website called FiveThirtyEight"),
-                          helpText("You can find the link", a("HERE!", href = "https://fivethirtyeight.com/features/which-state-has-the-worst-drivers/")),
+                          helpText("You can find the link", a("HERE!", href = "https://fivethirtyeight.com/features/which-state-has-the-worst-drivers/"))
                   ),
                  tabPanel("Map",
-                          
                           leafletOutput("mymap", width="1600", height="950"), #Output of the map
 
                           #The panel on the right side of the map
