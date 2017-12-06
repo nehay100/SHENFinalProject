@@ -12,18 +12,25 @@ shinyUI(fluidPage(
                            # font-size: 20px;}'),    
                  tabPanel("Home"),
                  tabPanel("Map",
-                          h2("Cumulative Map of the Bad Drivers Data", align = "center"), #Title of the page
-                          p("Insert analysis paragraph here", align = "center"),
-                          sidebarLayout(
-                            sidebarPanel(selectInput(inputId = "states",
-                                                     label = "Percentage of drivers involved in a car crash who were:",
-                                                     choices = c("Speeding",
-                                                                 "Not distracted",
-                                                                 "Alcohol impaired",
-                                                                 "Not involved in any previous accidents"), #Selection of options
-                                                     selected = "Speeding"), align = "center"),
-   
-                            leafletOutput("mymap", width="1400", height="900"))), #Output of the map
+                          
+                          leafletOutput("mymap", width="1600", height="800"), #Output of the map
+                          
+                          absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
+                                        draggable = TRUE, top = 85, left = "auto", right = 20, bottom = "auto",
+                                        width = 400, height = "auto",
+                                        
+                                        h2("A Cumulative Map of the Bad Drivers Data", align = "center"), #Title of side panel
+                                        
+                                        tags$head(includeCSS("styles.css")), #Custom CSS for opacity of the side panel
+                                        
+                                        selectInput("states", "Percentage of drivers who were:", 
+                                                    choices = c("Speeding",
+                                                                "Not distracted",
+                                                                "Alcohol impaired",
+                                                                "Not involved in any previous accidents"), #Selection of options
+                                                    selected = "Speeding"),
+                                        
+                                        p("Insert analysis paragraph here"))),
                           
                 tabPanel("Car Insurance", 
                           # Selects State, Car Insurance Premiums, and Losses incurred by insurance companies for collisions per insured driver ($) from the CSV
