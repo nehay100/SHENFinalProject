@@ -1,7 +1,6 @@
 # Master File
 library(shiny)
 library(leaflet)
-
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
     # Show a plot of the generated distribution
@@ -16,7 +15,17 @@ shinyUI(fluidPage(
                                    #margin-right:auto; 
                                    #height: auto;
                                    #}"))),    
-                 tabPanel("Home"),
+                 tabPanel("Home",
+                          titlePanel("Driving Statistics in the United States"),
+                          
+                          helpText("By Neha Yadav, Huda Waheed, Selene Wartell, and Emmanuel Robi"), 
+                          helpText("Display's:"), 
+                          helpText("- a comparison between car insurance premium and losses incurred by insurance companies based by state"),              
+                          helpText("- cumulative percentage of people who were involved in collisions who were speeding, alcohol impaired, not distracted, for each state"), 
+                          helpText("- a comparison about states lower and higher than the United States Average"), 
+                          helpText("The data was collected by Mona Chalabi and was published on the website called FiveThirtyEight"),
+                          helpText("You can find the link", a("HERE!", href = "https://fivethirtyeight.com/features/which-state-has-the-worst-drivers/")),
+                  ),
                  tabPanel("Map",
                           leafletOutput("mymap", width="1600", height="800"), #Output of the map
                           
