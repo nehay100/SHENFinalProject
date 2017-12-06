@@ -33,7 +33,7 @@ shinyUI(fluidPage(
 
                           #The panel on the right side of the map
                           absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
-                                        draggable = TRUE, top = 85, left = "auto", right = 578, bottom = "auto",
+                                        draggable = TRUE, top = 85, left = "auto", right = "auto", bottom = "auto",
                                         width = 400, height = "auto",
                                         
                                         h2("A Cumulative Map of the Bad Drivers Data", align = "center"), #Title of side panel
