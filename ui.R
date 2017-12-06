@@ -19,7 +19,7 @@ shinyUI(fluidPage(
                           titlePanel("Driving Statistics in the United States"),
                           
                           helpText("By Neha Yadav, Huda Waheed, Selene Wartell, and Emmanuel Robi"), 
-                          helpText("Display's:"), 
+                          helpText("Displays:"), 
                           helpText("- a comparison between car insurance premium and losses incurred by insurance companies based by state"),              
                           helpText("- cumulative percentage of people who were involved in collisions who were speeding, alcohol impaired, not distracted, for each state"), 
                           helpText("- a comparison about states lower and higher than the United States Average"), 
@@ -28,12 +28,12 @@ shinyUI(fluidPage(
                   ),
                  tabPanel("Map",
 
-                          leafletOutput("mymap", width="1600", height="950"), #Output of the map
+                          leafletOutput("mymap", width="1100", height="700"), #Output of the map
 
 
                           #The panel on the right side of the map
                           absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
-                                        draggable = TRUE, top = 85, left = "auto", right = 20, bottom = "auto",
+                                        draggable = TRUE, top = 85, left = "auto", right = 578, bottom = "auto",
                                         width = 400, height = "auto",
                                         
                                         h2("A Cumulative Map of the Bad Drivers Data", align = "center"), #Title of side panel
@@ -84,9 +84,9 @@ shinyUI(fluidPage(
                           mainPanel(plotOutput("Information")
                           )
                           )),
-                 tabPanel("Comparision", 
+                 tabPanel("Comparison", 
                           # Application title
-                          titlePanel("Comparision of Data with US Average"),
+                          titlePanel("Comparison of Data with US Average"),
                           p("Each graph has a different legend and so we will explore all the graphs and their various trends. One
                             note is when I mention lower and higher states graph, I mean the graphs representing the states higher
                             than the US average and lower than US average."),
