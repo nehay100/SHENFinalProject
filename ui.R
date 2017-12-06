@@ -22,7 +22,7 @@ shinyUI(fluidPage(
                                         
                                         h2("A Cumulative Map of the Bad Drivers Data", align = "center"), #Title of side panel
                                         
-                                        tags$head(includeCSS("styles.css")), #CSS for opacity of the side panel
+                                        tags$head(includeCSS("styles/styles.css")), #CSS for opacity of the side panel
                                         
                                         selectInput("states", "Percentage of drivers involved in a car crash who were:", 
                                                     choices = c("Speeding",
