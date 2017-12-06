@@ -18,7 +18,6 @@ shinyUI(fluidPage(
                                    #}"))),    
                  tabPanel("Home"),
                  tabPanel("Map",
-                          
                           leafletOutput("mymap", width="1600", height="800"), #Output of the map
                           
                           #The panel on the right side of the map
@@ -110,8 +109,8 @@ shinyUI(fluidPage(
                               plotOutput("higherAverage"),
                               plotOutput("lowerAverage")
                             )
-                          )),
-                 tabPanel("Alcohol Comparision")
+                          ))
+                 
       )
     )
   )
